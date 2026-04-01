@@ -4184,8 +4184,14 @@ Responda sempre em português brasileiro. Seja direto, prático e específico co
   setTimeout(function(){
     document.getElementById('ia-typing')?.remove();
     var resposta = iaResponder(msg);
-    msgs.innerHTML+='<div class="ia-msg bot" style="color:#ff6b6b">Erro ao conectar. Verifique sua conexão.</div>';
+// IA local — analisa dados do localStorage sem chamada externa
+  setTimeout(function(){
+    document.getElementById('ia-typing')?.remove();
+    var resposta = iaResponder(msg);
+    msgs.innerHTML+='<div class="ia-msg bot">'+resposta+'</div>';
     msgs.scrollTop=msgs.scrollHeight;
+  }, 600);
+}    msgs.scrollTop=msgs.scrollHeight;
   }, 600);
 }
 </script>
